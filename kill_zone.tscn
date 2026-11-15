@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://gv83mg5f88pk"]
+
+[ext_resource type="Script" uid="uid://bi57hoeecm07n" path="res://brackeys_platformer_assets/scripts/kill_zone.gd" id="1_tuh0n"]
+
+[node name="KillZone" type="Area2D" unique_id=1981192448]
+collision_mask = 2
+script = ExtResource("1_tuh0n")
+
+[node name="Timer" type="Timer" parent="." unique_id=1141124112]
+wait_time = 0.654
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
