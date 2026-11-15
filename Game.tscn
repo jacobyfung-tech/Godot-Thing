@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://gv83mg5f88pk" path="res://kill_zone.tscn" id="5_t88pq"]
 [ext_resource type="PackedScene" uid="uid://dbsvxrh2yfela" path="res://slime.tscn" id="6_r0x5m"]
 [ext_resource type="Texture2D" uid="uid://dumwmwyrawuqh" path="res://brackeys_platformer_assets/sprites/background_spritesheetv1-1.png" id="7_3mrqo"]
+[ext_resource type="Texture2D" uid="uid://be8e82l3q3n3w" path="res://brackeys_platformer_assets/sprites/background_spritesheetv2.png" id="9_2vekm"]
+[ext_resource type="PackedScene" uid="uid://f36w1tw05hyf" path="res://tung.tscn" id="10_yx171"]
+[ext_resource type="Texture2D" uid="uid://dfaaiur41oj28" path="res://brackeys_platformer_assets/sprites/txtee.png" id="11_yhmtn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3mldf"]
 
