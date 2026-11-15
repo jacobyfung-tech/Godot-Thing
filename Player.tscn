@@ -71,3 +71,5 @@ stream = ExtResource("4_e80uo")
 volume_db = -2.0
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=883648303]
+
+[node name="SFX2" type="AudioStreamPlayer2D" parent="." unique_id=52831358]
