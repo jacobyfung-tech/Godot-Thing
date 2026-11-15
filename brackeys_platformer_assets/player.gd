@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if not(Input.is_action_pressed("up")) and is_on_floor():
 		JUMP_ABILITY = JUMP_MIN
 	if velocity.y<0:
-		scale.y = min(max(1,-velocity.y/50+1), 5)
+		$AnimatedSprite2D.scale.y = min(max(1,-velocity.y/50+1), 5)
 	else:
 		scale.y = 1
 		
