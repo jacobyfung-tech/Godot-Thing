@@ -10,19 +10,28 @@ var timer:float = 0.0
 var textSpeed:float = 0.05 # Seconds between characters
 
 func _ready() -> void:
-	setText("welcome to RAHHHHH!")
+	setText("welcome to Rabbit Jump!")
 	await textFinished
 	await get_tree().create_timer(1.0).timeout
 
-	setText("you can jump on trees.")
+	setText("WASD/Arrow Keys to move.")
 	await textFinished
 	await get_tree().create_timer(2.0).timeout
+
+	setText("You can jump on trees.")
+	await textFinished
+	await get_tree().create_timer(2.0).timeout	
 	
-	setText("homer let the barts out")
+	setText("Make it to the top!")
 	await textFinished
 	await get_tree().create_timer(2.0).timeout
 	
 	setText("")
+	await textFinished
+	await get_tree().create_timer(2.0).timeout
+	
+	$"../box".queue_free()
+	queue_free()
 
 func setText(newString:String) -> void:
 	full = newString
