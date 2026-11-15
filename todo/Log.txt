@@ -1,1 +1,6 @@
 Use this to log changes idk
+
+
+platformer game where surfaces are well, bouncy?
+also part rythm game since every consecutive jump on beat you hit gets higher if you time right
+also chiikawa bouncy themed
