@@ -16,7 +16,8 @@ var nextBeat = 0
 
 
 const CHIIKAWA_105 = preload("uid://ddxjdub0sgjxs")
-const METRONOME = preload("uid://vbeyty8bmf2g")
+
+const METRONOME = preload("uid://ntogunlh81jk")
 
 const PRESS_GOOD = preload("uid://dk7m44q2piohw")
 const PRESS_BAD = preload("uid://jel4jygf3lsv")

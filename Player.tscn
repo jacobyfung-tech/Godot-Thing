@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3h6ffgess4ea" path="res://brackeys_platformer_assets/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://b22w5s2khdon" path="res://brackeys_platformer_assets/sprites/usagi_spritesheet.png" id="2_e80uo"]
 [ext_resource type="AudioStream" uid="uid://ddxjdub0sgjxs" path="res://brackeys_platformer_assets/music/Chiikawa105.wav" id="3_kne1u"]
-[ext_resource type="AudioStream" uid="uid://vbeyty8bmf2g" path="res://brackeys_platformer_assets/music/Lofi Mix-HiHat-d4jp ch f1 - Copy.wav" id="4_e80uo"]
+[ext_resource type="AudioStream" uid="uid://ntogunlh81jk" path="res://brackeys_platformer_assets/sounds/MetroNome.wav" id="4_e80uo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
 atlas = ExtResource("2_e80uo")
@@ -126,6 +126,11 @@ animations = [{
 "name": &"mid",
 "speed": 20.0
 }, {
+"frames": [],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oudfo")
@@ -158,7 +163,7 @@ script = ExtResource("1_kpjcp")
 z_index = 5
 position = Vector2(-1, -12)
 sprite_frames = SubResource("SpriteFrames_3mrqo")
-animation = &"idle"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=61230756]
 z_index = 5
@@ -172,10 +177,9 @@ volume_db = -5.975
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=958702093]
 volume_db = -10.089
 
-[node name="LofiMixHiHatD4JpChF1Copy" type="AudioStreamPlayer" parent="." unique_id=1839697189]
-stream = ExtResource("4_e80uo")
-volume_db = -2.0
-
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=883648303]
 
 [node name="SFX2" type="AudioStreamPlayer2D" parent="." unique_id=52831358]
+
+[node name="MetroNome" type="AudioStreamPlayer" parent="." unique_id=718997849]
+stream = ExtResource("4_e80uo")
