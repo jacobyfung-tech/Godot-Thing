@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://f36w1tw05hyf"]
+
+[ext_resource type="Texture2D" uid="uid://ilkj7ssg1mca" path="res://brackeys_platformer_assets/sprites/tripleT_spritesheet-1.png" id="1_kti78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj6h3"]
+atlas = ExtResource("1_kti78")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mldf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj6h3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tung" type="Node2D" unique_id=262915951]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=560024881]
+sprite_frames = SubResource("SpriteFrames_3mldf")
