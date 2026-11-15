@@ -39,6 +39,5 @@ func _process(delta: float) -> void:
 			i += 1
 
 			text = curr
-			
 			if i >= full.length():
 				textFinished.emit()
