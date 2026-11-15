@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if velocity.y<0:
-		anim_sprite.scale.y = min(max(1,-velocity.y/50+1), 5)
+		anim_sprite.scale.y = min(max(1,-velocity.y/50+1), 2)
 	else:
 		scale.y = 1
 		
