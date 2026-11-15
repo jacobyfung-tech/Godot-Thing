@@ -183,3 +183,4 @@ volume_db = -10.089
 
 [node name="MetroNome" type="AudioStreamPlayer" parent="." unique_id=718997849]
 stream = ExtResource("4_e80uo")
+volume_db = -9.421
