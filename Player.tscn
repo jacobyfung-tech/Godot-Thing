@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7okj0cx2cjjg"]
 
 [ext_resource type="Script" uid="uid://c3h6ffgess4ea" path="res://brackeys_platformer_assets/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://b22w5s2khdon" path="res://brackeys_platformer_assets/sprites/usagi_spritesheet.png" id="2_e80uo"]
+[ext_resource type="Texture2D" uid="uid://b22w5s2khdon" path="res://brackeys_platformer_assets/sprites/OLDsprite.png" id="2_e80uo"]
 [ext_resource type="AudioStream" uid="uid://ddxjdub0sgjxs" path="res://brackeys_platformer_assets/music/Chiikawa105.wav" id="3_kne1u"]
 [ext_resource type="AudioStream" uid="uid://ntogunlh81jk" path="res://brackeys_platformer_assets/sounds/MetroNome.wav" id="4_e80uo"]
 
@@ -183,3 +183,4 @@ volume_db = -10.089
 
 [node name="MetroNome" type="AudioStreamPlayer" parent="." unique_id=718997849]
 stream = ExtResource("4_e80uo")
+volume_db = -9.421
