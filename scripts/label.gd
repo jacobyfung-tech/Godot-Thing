@@ -29,9 +29,6 @@ func _ready() -> void:
 	setText("")
 	await textFinished
 	await get_tree().create_timer(2.0).timeout
-	
-	$"../box".queue_free()
-	queue_free()
 
 func setText(newString:String) -> void:
 	full = newString
@@ -50,3 +47,5 @@ func _process(delta: float) -> void:
 			text = curr
 			if i >= full.length():
 				textFinished.emit()
+	if full=="":
+		text = "Coins: " + str(Global.score)
