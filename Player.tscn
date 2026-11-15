@@ -172,7 +172,7 @@ shape = SubResource("CircleShape2D_3mldf")
 
 [node name="Chiikawa105" type="AudioStreamPlayer" parent="." unique_id=1320741156]
 stream = ExtResource("3_kne1u")
-volume_db = -5.975
+volume_db = 13.485
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=958702093]
 volume_db = -10.089
