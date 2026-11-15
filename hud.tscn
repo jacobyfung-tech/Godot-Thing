@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://br8njoqnnnmyg"]
 
+[ext_resource type="Texture2D" uid="uid://b8bj08r6grkwu" path="res://brackeys_platformer_assets/hachi_boxes.png" id="1_8sq4i"]
 [ext_resource type="Script" uid="uid://bw8cnpkj33pf0" path="res://scripts/label.gd" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://bccu4q8y7h4a2" path="res://brackeys_platformer_assets/frontscreen_spritesheet.png" id="2_64ctp"]
+[ext_resource type="FontFile" uid="uid://bnne6r4jdxaaa" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_640wx"]
 
 [node name="Control" type="Control" unique_id=1619476798]
 layout_mode = 3
@@ -11,43 +13,57 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1890655242]
+[node name="bottom right" type="TextureRect" parent="." unique_id=1890655242]
 layout_mode = 0
-offset_left = 480.0
+offset_left = 384.0
 offset_top = 270.0
 offset_right = 960.0
 offset_bottom = 540.0
 texture = ExtResource("2_64ctp")
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=46913009]
+[node name="top right" type="TextureRect" parent="." unique_id=46913009]
 layout_mode = 0
-offset_left = 480.0
+offset_left = 384.0
 offset_right = 960.0
 offset_bottom = 270.0
 texture = ExtResource("2_64ctp")
 flip_v = true
 
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=2082762243]
+[node name="bottom left" type="TextureRect" parent="." unique_id=2082762243]
 layout_mode = 0
-offset_top = 270.0
-offset_right = 480.0
-offset_bottom = 540.0
+offset_top = 269.0
+offset_right = 576.0
+offset_bottom = 539.0
 texture = ExtResource("2_64ctp")
 flip_h = true
 
-[node name="TextureRect4" type="TextureRect" parent="." unique_id=875009782]
+[node name="top left" type="TextureRect" parent="." unique_id=875009782]
 layout_mode = 0
-offset_right = 480.0
+offset_right = 576.0
 offset_bottom = 270.0
 texture = ExtResource("2_64ctp")
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="." unique_id=1122472205]
+[node name="box" type="TextureRect" parent="." unique_id=562800866]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 187.0
-offset_right = 198.0
-offset_bottom = 210.0
-text = "skibidi"
+offset_left = 71.0
+offset_top = 379.0
+offset_right = 262.0
+offset_bottom = 509.0
+texture = ExtResource("1_8sq4i")
+
+[node name="label" type="Label" parent="." unique_id=1122472205]
+custom_maximum_size = Vector2(165, 75)
+layout_mode = 0
+offset_left = 84.0
+offset_top = 435.0
+offset_right = 249.0
+offset_bottom = 486.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_640wx")
+theme_override_font_sizes/font_size = 14
+text = "abcdefghijklmnopqrstuvwxyz
+abcdefghijklm"
+autowrap_mode = 3
 script = ExtResource("1_37p78")
