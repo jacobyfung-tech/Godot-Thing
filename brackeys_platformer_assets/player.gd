@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+var lastGround = false
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
@@ -71,6 +73,9 @@ func closeWindow():
 	#print("@beat end")
 	pass
 
+
+	
+	
 func _physics_process(delta: float) -> void:
 	elapsed = (Time.get_ticks_msec()/1000.0 - start_time)-offset
 	#print(elapsed)
@@ -123,6 +128,7 @@ func _physics_process(delta: float) -> void:
 			jumpMult = LIMIT
 			
 		velocity.y = JUMP_VELOCITY * jumpMult
+		anim_sprite.play("upping")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -137,5 +143,21 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	
+	if !anim_sprite.is_playing() and !is_on_floor():
+		anim_sprite.play("mid")
+		
+	
+
 
 	move_and_slide()
+	if is_on_floor() && !lastGround:
+		print("Start goofy")
+		lastGround = is_on_floor()
+		anim_sprite.play("downing")
+	elif !anim_sprite.is_playing():
+		anim_sprite.play("idle")
+	
+	
+	lastGround = is_on_floor()

@@ -278,7 +278,7 @@ sources/0 = SubResource("TileSetAtlasSource_joorw")
 [node name="Game" type="Node2D" unique_id=479609014]
 
 [node name="Player" parent="." unique_id=1707168222 instance=ExtResource("1_wbfu4")]
-position = Vector2(-92, 51)
+position = Vector2(-93, 39)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=332405614]
 position = Vector2(18, -11)
