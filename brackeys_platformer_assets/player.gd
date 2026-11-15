@@ -6,7 +6,7 @@ var lastGround = false
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
-const LIMIT = 2
+const LIMIT = 2.5
 
 var jumpMult:= 1.0
 const BPM = 105
