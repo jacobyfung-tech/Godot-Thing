@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jybq22lrdq31"]
 
 [ext_resource type="PackedScene" uid="uid://7okj0cx2cjjg" path="res://Player.tscn" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://br8njoqnnnmyg" path="res://hud.tscn" id="2_3mrqo"]
 [ext_resource type="PackedScene" uid="uid://cb3ugmq6dsndo" path="res://platform.tscn" id="2_u44n3"]
 [ext_resource type="Texture2D" uid="uid://u5ybgr2ic10r" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_xkndl"]
 [ext_resource type="PackedScene" uid="uid://b1eybar16ev71" path="res://coin.tscn" id="4_sb48q"]
@@ -249,13 +250,9 @@ sources/0 = SubResource("TileSetAtlasSource_u44n3")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joorw"]
 texture = ExtResource("7_3mrqo")
 texture_region_size = Vector2i(64, 64)
-16:0/size_in_atlas = Vector2i(4, 4)
 16:0/0 = 0
-20:0/size_in_atlas = Vector2i(4, 4)
 20:0/0 = 0
-24:0/size_in_atlas = Vector2i(4, 4)
 24:0/0 = 0
-28:0/size_in_atlas = Vector2i(4, 4)
 28:0/0 = 0
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -288,6 +285,11 @@ position = Vector2(18, -11)
 zoom = Vector2(2, 2)
 limit_bottom = 76
 position_smoothing_enabled = true
+
+[node name="Top GUI" type="CanvasLayer" parent="Player" unique_id=140687372]
+layer = 5
+
+[node name="Control" parent="Player/Top GUI" unique_id=1619476798 instance=ExtResource("2_3mrqo")]
 
 [node name="KillZone" parent="." unique_id=1981192448 instance=ExtResource("5_t88pq")]
 position = Vector2(203, 93)
@@ -328,7 +330,7 @@ position = Vector2(-336, -124)
 position = Vector2(-16, 53)
 
 [node name="Platform2" parent="Platforms" unique_id=1269444917 instance=ExtResource("2_u44n3")]
-position = Vector2(371, 54)
+position = Vector2(-67, 8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2" unique_id=1046387536]
 libraries/ = SubResource("AnimationLibrary_r0x5m")
