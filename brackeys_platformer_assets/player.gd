@@ -18,6 +18,9 @@ const METRONOME = preload("uid://vbeyty8bmf2g")
 
 const PRESS_GOOD = preload("uid://dk7m44q2piohw")
 const PRESS_BAD = preload("uid://jel4jygf3lsv")
+const PRESS_LATE = preload("uid://cuqc8h2pjv4ui")
+const PRESS_EARLY = preload("uid://nlnj36wkbpif")
+
 
 
 
@@ -28,10 +31,14 @@ const PRESS_BAD = preload("uid://jel4jygf3lsv")
 
 var start_time: float = 0.0
 var elapsed: float = 0.0
-const offset = -0.03
-const window = 0.1
+const offset = -0.04
+const window = 0.13
 
-var onBeat = false
+var onBeat = 0
+#0: nothing
+#1: early
+#2: good
+#3: late
 
 func _ready() -> void:
 	audio_player.stream = CHIIKAWA_105
@@ -48,21 +55,36 @@ func _ready() -> void:
 	start_time = Time.get_ticks_msec() /1000.0
 	
 func closeWindow():
-	onBeat = false
-	print("beat end")
+	#print("SCHEDULE EARLY")
+	onBeat = 1
+	#print("@early")
+	await get_tree().create_timer(window*(3.0/12)).timeout
+	#print("SCHEDULE MID")
+	sfx.stream = METRONOME
+	sfx.play()
+	onBeat = 2
+	#print("@good")
+	await get_tree().create_timer(window*(5.0/12)).timeout
+	#print("SCHEDULE LATE")
+	onBeat = 3
+	#print("@late")
+	await get_tree().create_timer(window*(4.0/12)).timeout
+	#print("@cooked")
+	onBeat = 0
+	#print("@beat end")
 	pass
 
 func _physics_process(delta: float) -> void:
 	elapsed = (Time.get_ticks_msec()/1000.0 - start_time)-offset
 	#print(elapsed)
 	if(elapsed > nextBeat):
-		onBeat = true
-		print("BEAT")
+		
 		beatsPassed = beatsPassed + 1
 		nextBeat = quarter*beatsPassed
-		sfx.stream = METRONOME
-		sfx.play()
-		await get_tree().create_timer(window).timeout
+		
+		
+			
+		
 		closeWindow()
 		
 		
@@ -74,13 +96,25 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		if(onBeat):
-			sfx_2.stream = PRESS_GOOD
+		if(onBeat != 0):
+			
+			
+			if(onBeat == 1):
+				sfx_2.stream = PRESS_EARLY
+				
+				print("early")
+			elif(onBeat == 2):
+				sfx_2.stream = PRESS_GOOD
+				
+				print("good")
+			elif(onBeat == 3):
+				sfx_2.stream = PRESS_LATE
+				print("late")
+				
 			sfx_2.play()
-			print("YOU JUMPED ON BEAT!!!")
+			jumpMult += 0.2
 			
 		else:
-			jumpMult += 1.05
 			sfx_2.stream = PRESS_BAD
 			sfx_2.play()
 			print("whatever")
