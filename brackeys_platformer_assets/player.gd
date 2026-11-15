@@ -19,7 +19,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.scale.y = min(max(1,-velocity.y/50+1), 5)
 	else:
 		scale.y = 1
-		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
