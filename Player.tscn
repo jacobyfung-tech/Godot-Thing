@@ -178,9 +178,11 @@ volume_db = 13.485
 volume_db = -10.089
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=883648303]
+volume_db = -7.0
 
 [node name="SFX2" type="AudioStreamPlayer2D" parent="." unique_id=52831358]
+volume_db = -7.0
 
 [node name="MetroNome" type="AudioStreamPlayer" parent="." unique_id=718997849]
 stream = ExtResource("4_e80uo")
-volume_db = -9.421
+volume_db = -15.421
