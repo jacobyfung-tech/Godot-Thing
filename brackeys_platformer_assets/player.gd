@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
-
+const LIMIT = 2
 
 var jumpMult:= 1.0
 const BPM = 105
@@ -32,7 +32,7 @@ const PRESS_EARLY = preload("uid://nlnj36wkbpif")
 var start_time: float = 0.0
 var elapsed: float = 0.0
 const offset = -0.04
-const window = 0.13
+const window = 0.17
 
 var onBeat = 0
 #0: nothing
@@ -58,7 +58,7 @@ func closeWindow():
 	#print("SCHEDULE EARLY")
 	onBeat = 1
 	#print("@early")
-	await get_tree().create_timer(window*(3.0/12)).timeout
+	await get_tree().create_timer(window*(2.0/12)).timeout
 	#print("SCHEDULE MID")
 	sfx.stream = METRONOME
 	sfx.play()
@@ -103,21 +103,29 @@ func _physics_process(delta: float) -> void:
 				sfx_2.stream = PRESS_EARLY
 				
 				print("early")
+				jumpMult += 0.1
 			elif(onBeat == 2):
 				sfx_2.stream = PRESS_GOOD
-				
+				jumpMult += 0.2
 				print("good")
 			elif(onBeat == 3):
 				sfx_2.stream = PRESS_LATE
 				print("late")
+				jumpMult += 0.1
+			
 				
 			sfx_2.play()
-			jumpMult += 0.2
+			
 			
 		else:
 			sfx_2.stream = PRESS_BAD
 			sfx_2.play()
 			print("whatever")
+			if(jumpMult > 1):
+				jumpMult -= 0.12
+				
+		if(jumpMult > LIMIT):
+			jumpMult = LIMIT
 			
 		velocity.y = JUMP_VELOCITY * jumpMult
 
@@ -126,6 +134,12 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if(direction > 0):
+			anim_sprite.flip_h = false
+		
+		elif(direction < 0):
+			anim_sprite.flip_h = true
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
